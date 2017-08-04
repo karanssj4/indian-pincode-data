@@ -34,3 +34,11 @@ csv({
   fs.writeFileSync('res/pincodeData.pretty.json', JSON.stringify(result, null, 1));
   console.log('end');
 })
+.preFileLine((fileLineString, lineIdx)=>{
+  if (lineIdx === 1){
+    const beforeRow = 'officename,pincode,officeType,Deliverystatus,divisionname,regionname,circlename,Taluk,Districtname,statename';
+    const afterRow = 'name,pin,officeType,Deliverystatus,division,region,circle,tsluk,district,state';
+    return fileLineString.replace(beforeRow, afterRow);
+  }
+    return fileLineString;
+})
