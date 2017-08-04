@@ -13,7 +13,7 @@ csv({
     colParser:{
       "officeType": "omit",
       "Deliverystatus": "omit",
-      "officename":function(item, head, resultRow, row , colIdx){
+      "name":function(item, head, resultRow, row , colIdx){
             /*
                 item - "1970-01-01"
                 head - "birthday"
