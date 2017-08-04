@@ -1,0 +1,30 @@
+{
+  "name": "indian-pincode-data",
+  "version": "1.0.0",
+  "description": "pincode wise data for indian postal system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karanssj4/indian-pincode-data.git"
+  },
+  "keywords": [
+    "india",
+    "pin",
+    "pincode",
+    "indian",
+    "city",
+    "cities"
+  ],
+  "author": "Karan Raina",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/karanssj4/indian-pincode-data/issues"
+  },
+  "homepage": "https://github.com/karanssj4/indian-pincode-data#readme",
+  "dependencies": {
+    "csvtojson": "^1.1.7"
+  }
+}
