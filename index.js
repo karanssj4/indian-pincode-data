@@ -3,7 +3,7 @@ const path = require('path');
 const csv = require('csvtojson');
 
 // const data =  fs.readFileSync(path.join(__dirname, 'res/test.csv'), { encoding : 'utf8'});
-const data =  fs.readFileSync(path.join(__dirname, 'res/all_india_pin_code.csv'), { encoding : 'utf8'});
+const data =  fs.readFileSync(path.join(__dirname, 'res/all_india_pin_code_corrected.csv'), { encoding : 'utf8'});
 const result = [];
 
 
@@ -24,7 +24,8 @@ csv({
             // return new Date(item);
             return item.replace(/ (B|S|H).O/g, "")
         }
-    }
+    },
+    checkColumn: true
 }).fromString(data)
 .on('json', (json) => {
   result.push(json);
@@ -37,7 +38,7 @@ csv({
 .preFileLine((fileLineString, lineIdx)=>{
   if (lineIdx === 1){
     const beforeRow = 'officename,pincode,officeType,Deliverystatus,divisionname,regionname,circlename,Taluk,Districtname,statename';
-    const afterRow = 'name,pin,officeType,Deliverystatus,division,region,circle,tsluk,district,state';
+    const afterRow = 'name,pin,officeType,Deliverystatus,division,region,circle,taluk,district,state';
     return fileLineString.replace(beforeRow, afterRow);
   }
     return fileLineString;
